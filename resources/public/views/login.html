@@ -1,0 +1,57 @@
+<div class ="container">
+<div class="col-md-6 col-md-offset-3">
+	<div ng-show="error" class="alert alert-danger">Wrong username or password</div>
+
+	<tabset> 
+	
+	<tab heading="Login">
+	<form novalidate>
+		<h2>Login</h2>
+		<div class="form-group">
+			<input type="text" class="form-control" id="userLogin" 
+				name="passward" placeholder="Username" ng-model="credentials.username" required=>
+		</div>
+		<div class="form-group">
+			 <input type="password" class="form-control" name="password"
+				id="userPassword" placeholder="Password" ng-model="credentials.password" required>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary" ng-click="login()">Login</button>
+		</div>
+	</form>
+	</tab> 
+	
+	<tab heading = "Register">
+	<form novalidate>
+		<h2>Register</h2>
+		<div class="form-group">
+			 <input type="text" class="form-control" id="userLogin"
+				name="passward" placeholder="Username" ng-model="newUser.username" required>
+		</div>
+
+		<div class="form-group">
+			 <input type="email" class="form-control" name="email"
+				placeholder="Email Address" ng-model="newUser.email" required>
+		</div>
+
+		<div class="form-group">
+			<input type="password" class="form-control" name="password"
+				placeholder="Password" ng-model="newUser.password" required>
+		</div>
+
+		<div class="form-group">
+			<input type="password" class="form-control"
+				name="passwordConfirm" placeholder="Confirm Password" ng-model="newUser.passwordConfirm" required>
+		</div>
+
+
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+		</div>
+	</form>
+	</tab>
+	
+	</tabset>
+</div>
+
+</div>

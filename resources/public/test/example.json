@@ -1,0 +1,32 @@
+WorkCycle = [
+  {
+    "date": "june 1",
+    "entries":[
+    	{
+    	"hours": 2,
+    	"hoursType": "pto",
+    	"clientName": "n/a",
+    	"projectName: "n/a",
+    	"comments": "doctors visit"	},
+    	{
+    	"hours": 6,
+    	"hoursType": "billable",
+    	"clientName": "cooksys",
+    	"projectName: "time sheet project",
+    	"comments": "null"
+    	}
+    	
+    ]
+  },
+  {
+  	"date": "june 2",
+    "entries":[
+    	{
+    	"hours": 8,
+    	"hoursType": "billable",
+    	"clientName": "Amex",
+    	"projectName: "GBT",
+    	"comments": "Did some cool stuff"},
+  }
+]
+  

@@ -1,0 +1,44 @@
+<div class="col-lg-12">
+<div>
+   	<div>
+   		<button class="btn btn-default" data-ng-click="cycleBackward()"  > <b>&lt;-</b> </button>
+   		
+   		<label>{{cycle.month}}         {{cycleNumber}}</label>
+   		
+   		<button class="btn btn-default"  data-ng-click="cycleForward()" > <b>-&gt;</b> </button>
+   	</div>
+</div>
+
+
+<div class="table-responsive" >
+<table  class="table table-striped">
+		<tr >
+			<th > Day </th>
+			<th > Billable Hours </th>
+			<th > NonBillable Hours </th>
+			<th > PTO Hours </th>
+			<th > Total Hours </th>
+			<th > Client Name </th>
+			<th > Project Name </th>
+			<th ></th>
+		</tr>
+		
+		
+		<tr ng-repeat="entry in entries">
+			<td width="5%"> {{$index + 1}} </td>
+			<td width="5%"> <input type="number" size="4" value="{{entry.bHours}}"   /> </td>
+			<td width="5%"> <input type="number" size="4" value="{{entry.nbHours}}"  /> </td>
+			<td width="5%"> <input type="number" size="4" value="{{entry.ptoHours}}"  /> </td>
+			<td width="5%"> <input type="number" size="4" value="{{entry.totalDayHours}}"/> </td>
+			<td width="20%"> <input type="text" size="20" /> </td>
+			<td width="20%"> <input type="text" size="20" /> </td>
+			<td>  </td>
+			
+		</tr>
+
+
+
+
+</table>
+</div>
+</div>

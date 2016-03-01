@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="CookTimeSheet">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cook Timesheet</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/cookpayroll.css">
+<link rel="shortcut icon" href="/resources/public/img/favicon.ico" />
+</head>
+<body  class="myBackground">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" ng-controller="NavigationBarController">
+<!--     Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">
+<!--  			<img class="logo" src="images/logo.jpg" alt="Cook logo" style="width:383px;height:132px" border="5" /> -->
+      </a>
+      
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+     <li class="dropdown" dropdown >
+	     <a href="#" class="dropdown-toggle" dropdown-toggle role="button" aria-expanded="false">Settings <span class="caret"></span></a>
+		 <ul class="dropdown-menu " role="menu">
+		     <li><a href="#/home">Home</a><li>
+		     <li><a href="#/shane">Timesheet</a><li>
+		     <li><a href="#/admin">Admin</a><li>
+		     <li><a href="#/profile">Edit Profile</a></li>
+		     <li><a href="#/history">History</a></li>
+		     <li><a href="" ng-click="logout()">Log Off</a></li>
+	     </ul>
+     </li>
+    </ul>
+    
+    
+  
+
+	 
+    
+    </div>
+
+</nav>
+  
+ 
+<div ng-view="">
+ 
+
+</div>
+ 
+
+  	
+  	
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-cookies.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-sanitize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-resource.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+
+<script src="/CookPayroll/scripts/app.js"></script>
+<script src="/CookPayroll/scripts/appWorkSheet.js"></script>
+<script src="/CookPayroll/scripts/appLogin.js"></script>
+<script src="/CookPayroll/scripts/admin.js"></script>
+<script src="/CookPayroll/scripts/appEdit.js"></script>
+<script type="text/javascript" src="/CookPayroll/scripts/history.js"></script>
+<script type="text/javascript" src="/CookPayroll/scripts/projectUpdate.js"></script>
+<script type="text/javascript" src="/CookPayroll/scripts/home.js"></script>
+</body>
+</html>

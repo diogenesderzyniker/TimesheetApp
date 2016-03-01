@@ -1,0 +1,51 @@
+<div class="container">
+<h1>View Your past Timesheets</h1>
+<br>
+
+<ul class="list-group">
+<li class="list-group-item">
+<table class="table table-condensed">
+	<tr>
+		<th>Date</th>
+		<th>status</th>
+		<th> </th>
+	</tr>
+	<tr ng-repeat="timesheet in timesheets">
+	<td >
+	{{getDateFromCycle(timesheet.cycleNum)}}
+	</td>
+	<td>
+	
+	{{timesheet.status}}
+	</td>
+	<td>
+	
+	<input class="btn btn-primary" ng-click="goToTimesheet(timesheet.cycleNum)" type="button" value="Edit" ng-disabled="false">
+	</td>
+	</tr>
+</table>
+</li>
+</ul>
+<!-- <div class = "myForm"> -->
+<!-- <table class="table table-condensed"> -->
+<!-- 	<tr> -->
+<!-- 		<th>Date</th> -->
+<!-- 		<th>status</th> -->
+<!-- 		<th> </th> -->
+<!-- 	</tr> -->
+<!-- 	<tr ng-repeat="timesheet in timesheets" > -->
+<!-- 	<td > -->
+<!-- 	{{getDateFromCycle(timesheet.cycleNum)}} -->
+<!-- 	</td> -->
+<!-- 	<td> -->
+	
+<!-- 	{{timesheet.status}} -->
+<!-- 	</td> -->
+<!-- 	<td> -->
+	
+<!-- 	<input class="btn btn-primary" ng-click="goToTimesheet(timesheet.cycleNum)" type="button" value="Edit" ng-disabled="false"> -->
+<!-- 	</td> -->
+<!-- 	</tr> -->
+<!-- </table> -->
+<!-- </div> -->
+</div>

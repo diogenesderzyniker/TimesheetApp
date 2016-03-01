@@ -1,0 +1,94 @@
+<div class="container-fluid">
+<div ng-show="approved" class="alert alert-success"><h1 class="text-center">Approved Timesheet</h1></div>
+<div ng-show="denied" class="alert alert-success"><h1 class="text-center">Denied Timesheet</h1></div>
+<div ng-show="error" class="alert alert-danger"><h1 class="text-center">Error Processing Request</h1></div>
+	<div class="row myForm">
+		<div class="col-lg-12">
+
+			<table class="table table-condensed">
+				<tr class="form-inline">				
+					<td><strong>Date</strong>					
+					<select class="form-control" ng-options="year for year in years" ng-model="tsr.year"></select>
+					<select class="form-control" ng-options="months.indexOf(m) as m for m in months" ng-model="tsr.month"></select>
+					<select class="form-control" ng-model="tsr.half" ng-options="halfString[h-1] for h in half"></select>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br/>
+<!-- 	<div class="row"></div> -->
+	<div class="row">
+		<div class="col-lg-4 myForm adminContainer">
+			<div style="text-align: center">
+			<h2>List of employees</h2>
+			</div>
+			<br />
+			<div class="form-group">
+				<input class= "form-control" ng-model="searchText" placeholder="Search...">
+			</div>
+			<br/>
+			<div class ="myScroll">
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="employee in employeeList | filter : filterFunction">
+				<a href="#/admin" ng-click="getTimesheet(employee)">{{employee.username}}</a>
+				</li>				
+			</ul>
+			</div>
+			
+			 
+		</div>
+		<div class="col-lg-8 myForm adminContainer">
+			<h3><label>Timesheet Summary</label></h3>
+			<h4 >
+				<strong>
+					<label>Employee Id: {{employeeUsername}}</label><br/> 
+					<label>Billable hours: {{billableHours}}</label><br/>
+					<label>PTO  hours: {{ptoHours}}</label><br/>
+					<label>Non-Billable hours: {{nonBillableHours}}</label><br/>
+				</strong>
+			</h4>
+			
+			<div class= "myForm">	
+	<div class="myScroll">
+			<table class="table table-condensed table-responsive">			
+			
+				<tr ng-repeat="day in timesheet.days | filter:entryFilter">
+					<td><strong>{{getDayString(day.year,day.month,day.day)}}</strong></td>
+					<td>
+						<div class="form-inline" ng-repeat="entry in day.entries">
+<!-- 							<label class="form-control">{{entry.hours}}</label>  -->
+<!-- 							<label class="form-control">{{entry.hoursType}}</label>  -->
+<!-- 							<label class="form-control">{{entry.clientName}}</label> -->
+<!-- 							<label class="form-control">{{entry.projectName}}</label> -->
+<!-- 							<label class="form-control">{{entry.comments}}</label>    -->
+							<input class="form-control magic" type="number" ng-model="entry.hours" placeholder="hours" disabled="disabled" ></input>
+							<select class="form-control" ng-model="entry.hoursType" disabled="disabled">
+								<option value="Billable">Billable</option>
+								<option value="nonBillable">non-Billable</option>
+								<option value="PTO">PTO</option>
+							</select> 
+							<input class="form-control" type="text" ng-model="entry.clientName" placeholder="Client Name" disabled="disabled" ></input>
+							<input class="form-control" type="text" ng-model="entry.projectName" placeholder="Project Name" disabled="disabled"></input>
+							<input class="form-control"	type="text" ng-model="entry.comments" placeholder="Comments..." disabled="disabled"></input>
+<!-- 							<input class="btn btn-primary" type="button"  value="+" disabled="disabled"></input> -->
+<!-- 							<input class="btn btn-primary" type="button"  value="-" disabled="disabled"></input> -->
+<!-- 							<input class="btn btn-primary" type="button" value="edit"></input> -->
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="text-center">
+		<div class="col-md-2"> 
+			<input class="btn btn-primary adminBtn" type="button" ng-click="acceptTimesheet()" value="Approve">
+			<hr class="myLine" />
+			<input class="btn btn-primary adminBtn" type="button" ng-click="denyTimesheet()" value="Deny">
+		</div>
+		<div class="col-md-5 visible-phone"><textarea wrap="soft" rows="5" cols="100" placeholder="Comments for employee..." maxLength="300" ng-model="comment"></textarea></div>
+		<br />
+	</div>
+	</div>
+	</div>
+</div>

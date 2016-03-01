@@ -1,0 +1,83 @@
+.red {
+	border-color: red;
+}
+
+.myBackground{
+	background-color: #E8E8E8;
+	
+}
+
+.myHeader{
+	background-color: lightgray;
+	text-align: center;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 48p;
+}
+
+.myInfo{
+	background-color: white ;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.myCenter{
+	text-align: center;
+}
+
+.myForm{
+	border-radius :10px;
+	background-color: lightgray;
+}
+.myButton{
+	border-radius: 10px;
+	background-color: blue;
+}
+.myScrollBlock{
+	max-height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.employeeList{
+	max-height: 800px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.adminContainer{
+	height: 100%;
+}
+
+.myScroll{
+	max-height: 628px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.form-control.magic{
+	max-width: 80px;
+}
+
+.myLine{
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+
+.adminBtn{
+	width: 100%;
+}
+
+.textWidth{
+	width: 100px;
+}
+
+.visible-phone{
+@media (max-width: 480px)
+	width: 50%;
+}
+
+.visible-desktop{
+@media (min-width: 768px)
+	width: 100%;
+}

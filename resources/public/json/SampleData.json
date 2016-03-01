@@ -1,0 +1,50 @@
+Cycles[{
+	cycleId: 2
+	month : January
+	year : 2015
+	cycle: 2
+
+	Timesheets :[{
+		employee: Marcus Garmon
+		created on: January 31, 2015
+		entries:[{
+			date: January 16, 2015
+			ptoHours: 5
+			billableHours:3
+			project: travel recog
+			client: amex
+			},
+			{
+			date: January 17, 2015
+			ptoHours: 8
+			project: travel recog
+			client: amex
+			}]
+		validator: Edith 
+			
+
+	},
+	{
+		employee: Jay Durham
+		created on: January 31, 2015
+		entries:[{
+			date: January 16, 2015
+			ptoHours: 8
+			project: travel recog
+			client: amex
+			},
+			{
+			date: January 17, 2015
+			ptoHours: 8
+			project: travel recog
+			client: amex
+			}]
+		validator: Edith 
+	};
+},
+{
+	cycleId: 2
+	month : February
+	year : 2015
+	cycle: 1
+	.........

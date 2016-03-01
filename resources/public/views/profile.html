@@ -1,0 +1,88 @@
+<div class="container" ng-init="fillInfo()">
+	<h1 class="myHeader">Edit your profile</h1>
+	<form novalidate name="pwordForm">
+	<div ng-show="pCheck()" class="alert alert-danger">Passwords Do Not Match</div>
+	<div ng-show="success" class="alert alert-success"><h1 class="text-center">Profile updated successfully</h1></div>
+	
+	<table class="table table-condensed">
+		<tr>
+			<td><strong>Change Password</strong>
+			<td>
+				<input type="checkbox" ng-model="change">
+			</td>
+		</tr>
+		<tr class="form-inline" ng-show="change">
+			<td><strong>Password</strong></td>
+			<td>
+				<div class="form-group">
+					<input ng-class="{'red': pCheck()}" type="password" class="form-control" name="pw1" ng-model="pw1" required>
+				</div>
+			</td>
+			<td><strong>Confirm Password</strong></td>
+			<td>
+				<div class="form-group">
+					<input ng-class="{'red': pCheck()}" type="password" class="form-control" name="pw2" ng-model="pw2" required>
+				</div>
+			</td>
+		</tr>
+		<tr class="form-inline">
+			<td><strong>Full Name</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="fullname" placeholder="Full Name" ng-model="employee.employeeName" required=>
+				</div>
+			</td>
+			<td><strong>Birthday</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" onfocus="(this.type='date')" class="form-control"  name="birthday" placeholder="Birthday" ng-model="employee.dob" required=>
+				</div>
+			</td>
+		</tr>
+		<tr class="form-inline">
+			<td><strong>Address</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="address" placeholder="Address" ng-model="employee.address" required=>
+				</div>
+			</td>
+			<td><strong>City</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="city" placeholder="City" ng-model="employee.city" required=>
+				</div>
+			</td>
+		</tr>
+		<tr class="form-inline">
+			<td><strong>State</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="state" placeholder="State" ng-model="employee.state" required=>
+				</div>
+			</td>
+			<td><strong>Zip Code</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="zipcode" placeholder="Zip Code" ng-model="employee.zipCode" required=>
+				</div>
+			</td>
+		</tr>
+		<tr class="form-inline">
+			<td><strong>Phone Number</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="phone" placeholder="Phone Number" ng-model="employee.phoneNumber" required=>
+				</div>
+			</td>
+			<td><strong>Job Title</strong></td>
+			<td>
+				<div class="form-group">
+					<input type="text" class="form-control"  name="position" placeholder="Job Title" ng-model="employee.position" required=>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div ng-show="submitted" class="alert alert-success">Your information has been updated</div>
+	<button type="button" class="btn btn-primary" ng-click="editInfo()">Submit</button>
+	</form>
+</div>

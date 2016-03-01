@@ -1,0 +1,70 @@
+<div class= "container">
+	<h1 class="myHeader">Fill Out Your Timesheet</h1>
+	<div ng-show="success" class="alert alert-success"><h1 class="text-center">Timesheet submitted successfully</h1></div>
+
+	<form novalidate>
+	<div class="myForm">
+		<table class="table table-condensed">
+			<tr class="form-inline">
+				<td><strong>Date</strong></td>
+				<td>
+					<select class="form-control" ng-options="year for year in years" ng-model="tsr.year"></select> 
+					<select	class="form-control" ng-options="months.indexOf(m) as m for m in months" ng-model="tsr.month"></select> 
+					<select class="form-control" ng-model="tsr.half" ng-options="halfString[h-1] for h in half"></select>
+					<button type="button" class="btn btn-primary"	ng-click="requestTimeSheet()">Update Time Sheet</button>
+					<label class="pull-right" style="margin-right: 10px"><strong>
+					Timesheet status: {{timesheet.status}}
+					</strong>
+					</label>
+				</td>
+			</tr>
+			<tr class="form-inline">
+				<td class="textWidth"><strong>Quick Fill</strong></td>
+				<td>
+					<input class="form-control magic" type="number" ng-model="quickFill.hours" placeholder="hours" /> 
+					<select	class="form-control" ng-model="quickFill.hoursType">
+						<option value="Billable">Billable</option>
+						<option value="nonBillable">non-Billable</option>
+						<option value="PTO">PTO</option>
+					</select> 
+					<input class="form-control" type="text"	ng-model="quickFill.clientName" placeholder="Client Name" /> 
+					<input class="form-control" type="text" ng-model="quickFill.projectName" placeholder="Project Name" /> 
+					<input class="form-control"	type="text" ng-model="quickFill.comments" placeholder="Comments..." />
+					<input class="btn btn-primary" type="button" ng-click="fillWorkSheet()" value="Quick Fill">
+				</td>
+			</tr>
+		</table>
+	</div>
+		<div class= "myForm">	
+	<div class="myScrollBlock">
+			<table class="table table-condensed table-responsive">			
+			
+				<tr ng-repeat="day in timesheet.days">
+					<td><strong>{{getDayString(day.year,day.month,day.day)}}</strong></td>
+					<td>
+						<div class="form-inline" ng-repeat="entry in day.entries">
+							<input class="form-control magic" type="number" ng-model="entry.hours" placeholder="hours" /> 
+							<select class="form-control" ng-model="entry.hoursType">
+								<option value="Billable">Billable</option>
+								<option value="nonBillable">non-Billable</option>
+								<option value="PTO">PTO</option>
+							</select> 
+							<input class="form-control" type="text" ng-model="entry.clientName" placeholder="Client Name" /> 
+							<input class="form-control" type="text" ng-model="entry.projectName" placeholder="Project Name" /> 
+							<input class="form-control"	type="text" ng-model="entry.comments" placeholder="Comments..." />
+							<input class="btn btn-primary" type="button" ng-click=addEntry(day) value="+"> 
+							<input class="btn btn-primary" type="button" ng-click=removeEntry(day) value="-">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<br/>
+		
+		<input class="btn btn-primary btn-block btn-lg" type="button" ng-click="save()" value="Submit Timesheet" />
+	</form>
+<!-- 	<pre>Timesheet = {{timesheet |json}}</pre> -->
+</div>
+
+
