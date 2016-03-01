@@ -32,7 +32,7 @@ public class DBSeed {
  
 			seedEmployees();
 			
-//			MongoCredential cred = MongoCredential.createCredential("BartonFink", "cookpayroll", "password".toCharArray());
+//			MongoCredential cred = MongoCredential.createCredential("BartonFink", "payroll", "password".toCharArray());
 //	        
 //	        MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(cred));
 //	        mongoClient.setWriteConcern(WriteConcern.SAFE);
@@ -74,7 +74,7 @@ public class DBSeed {
 				+ "'year':2015,"
 				+ "'timesheets' : [{ 'employeeId': '1235678',"
 									+ "'createdOn' : 'January',"
-									+ "'validator' : 'Edith'}] "
+									+ "'validator' : 'TheValidator'}] "
 									+ "}"));
 		dbObjects.add( (DBObject) JSON.parse("{'cycleId' : 2, 'month':0, 'cycle':2, 'year':2015}"));
 		dbObjects.add( (DBObject) JSON.parse("{'cycleId' : 3, 'month':1, 'cycle':1, 'year':2015}"));
@@ -109,87 +109,42 @@ public class DBSeed {
 		
 		List<DBObject> emps = new ArrayList<DBObject>();
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'AAyyasamy@cooksys.com',"
+				+ "{'username' : 'JBond@MI6.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'AArmstrong@cooksys.com',"
+				+ "{'username' : 'PParker@friendlyneighborhood.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'AMayur@cooksys.com',"
+				+ "{'username' : 'LLuther@Metropolis.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'FTineo@cooksys.com',"
+				+ "{'username' : 'EMusk@mars.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'JDurham@cooksys.com',"
+				+ "{'username' : 'jd@example.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'KVanama@cooksys.com',"
+				+ "{'username' : 'FSFitzgerald@westegg.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'MGarmon@cooksys.com',"
+				+ "{'username' : 'TFlash@CCity.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'PBhattacharya@cooksys.com',"
+				+ "{'username' : 'BWayne@Arkham.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'PMehta@cooksys.com',"
+				+ "{'username' : 'CDGaulle@larepublique.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'RRaman@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'RErler@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'SGundamaraju@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'SKuppagiri@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'SDublin@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'SSangelkar@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'TKarmakar@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'CThomas@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'CNeal@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'DCallis@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'JDurbin@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'RDixon@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'RMorton@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'WLeath@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'YThompson@cooksys.com',"
-				+ "'password' : '" + hashedPass + "'}"));
-		emps.add((DBObject) JSON.parse(""
-				+ "{'username' : 'SClements@cooksys.com',"
+				+ "{'username' : 'GKahn@theSteppes.com',"
 				+ "'password' : '" + hashedPass + "'}"));
 				
 
-		MongoCredential cred = MongoCredential.createCredential("BartonFink", "cookpayroll", "password".toCharArray());
+		MongoCredential cred = MongoCredential.createCredential("BartonFink", "payroll", "password".toCharArray());
         
         MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(cred));
         mongoClient.setWriteConcern(WriteConcern.SAFE);
-        DB db = mongoClient.getDB("cookpayroll");
+        DB db = mongoClient.getDB("payroll");
 		
 		DBCollection collection = db.getCollection("Employees");
 		collection.drop();
